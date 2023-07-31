@@ -1,0 +1,49 @@
+﻿@model WebApplication1.Models.PatientSet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Me</h2>
+
+<div>
+    <h4>Here is your personnal information</h4>
+    <hr />
+    <dl class="dl-horizontal">
+@*        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pwd)
+        </dd>
+@*        <dt>
+            @Html.DisplayNameFor(model => model.confirm_pwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.confirm_pwd)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit") |
+    @Html.ActionLink("Deactivate my account", "Delete")
+</p>

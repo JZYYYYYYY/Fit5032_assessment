@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="CashierSet" EntityType="Model1.Store.CashierSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DoctorSet" EntityType="Model1.Store.DoctorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PatientSet" EntityType="Model1.Store.PatientSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProcessSet" EntityType="Model1.Store.ProcessSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoomSet" EntityType="Model1.Store.RoomSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CashierSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pwd" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DoctorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="endTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PatientSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="confirm_pwd" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProcessSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Doctor" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Room" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="startTime" Type="datetime" Nullable="true" />
+    <Property Name="payment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bodyPart" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="endTime" Type="datetime" Nullable="false" />
+  </EntityType>
+</Schema>
